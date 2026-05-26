@@ -135,6 +135,28 @@ h1, h2, h3, h4, h5, h6 {
   to { transform: translateX(-50%); }
 }
 
+/* ────────── Echo / Ripple Animation ────────── */
+
+@keyframes rippleWave {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: var(--echo-opacity, 0.35);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.echo-line {
+  stroke-width: 1.2px;
+  animation: rippleWave var(--echo-duration, 10s) cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  animation-delay: var(--echo-delay, 0s);
+  vector-effect: non-scaling-stroke;
+  will-change: opacity;
+}
+
 /* ────────── Component Styles ────────── */
 
 .section-container {

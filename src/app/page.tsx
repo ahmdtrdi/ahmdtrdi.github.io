@@ -10,7 +10,6 @@ export default function Home() {
       <Navigation />
       <main>
         <HeroChart />
-        <div className="section-divider" />
         <AboutSection />
         <div className="section-divider" />
         <CategorySections />
@@ -19,3 +18,4 @@ export default function Home() {
     </>
   );
 }
+

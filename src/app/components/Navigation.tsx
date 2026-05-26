@@ -17,8 +17,11 @@ const navLinks = [
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
@@ -42,11 +45,14 @@ export default function Navigation() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-[20px]"
+      }`}
       style={{
         background: scrolled ? "rgba(250, 249, 247, 0.85)" : "transparent",
         backdropFilter: scrolled ? "blur(20px)" : "none",
         borderBottom: scrolled ? "1px solid var(--line)" : "1px solid transparent",
+        transition: "background 0.5s, backdrop-filter 0.5s, border-bottom 0.5s, opacity 1.2s ease-out, transform 1.2s ease-out",
       }}
     >
       <div className="section-container">

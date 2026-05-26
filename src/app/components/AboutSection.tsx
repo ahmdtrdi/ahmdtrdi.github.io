@@ -30,15 +30,15 @@ export default function AboutSection() {
       ref={sectionRef}
       id="about"
       className="relative py-24 md:py-32 overflow-hidden"
-      style={{ background: "var(--paper)" }}
+      style={{ background: "transparent" }}
     >
-      {/* Decorative dots */}
-      <div className="floating-dot" style={{ width: 14, height: 14, background: "var(--lavender-light)", top: "10%", right: "25%", animationDelay: "0.5s" }} />
-      <div className="floating-dot" style={{ width: 10, height: 10, background: "var(--peach)", top: "30%", right: "15%", animationDelay: "1.5s" }} />
-      <div className="floating-dot" style={{ width: 8, height: 8, background: "var(--blue-light)", bottom: "20%", right: "30%", animationDelay: "2s" }} />
-      <div className="floating-dot" style={{ width: 6, height: 6, background: "var(--gold)", bottom: "35%", left: "60%", animationDelay: "0.8s" }} />
+      {/* Decorative large bokeh bubbles behind cards (Canva style) */}
+      <div className="floating-dot" style={{ width: 32, height: 32, background: "var(--lavender)", opacity: 0.35, top: "25%", right: "22%", animationDelay: "0.5s" }} />
+      <div className="floating-dot" style={{ width: 24, height: 24, background: "var(--peach)", opacity: 0.3, top: "45%", right: "35%", animationDelay: "1.5s" }} />
+      <div className="floating-dot" style={{ width: 36, height: 36, background: "var(--blue-light)", opacity: 0.3, bottom: "20%", right: "12%", animationDelay: "2.0s" }} />
+      <div className="floating-dot" style={{ width: 20, height: 20, background: "var(--gold)", opacity: 0.25, top: "15%", right: "6%", animationDelay: "0.8s" }} />
 
-      <div className="section-container">
+      <div className="section-container relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left — Text */}
           <div
@@ -66,7 +66,7 @@ export default function AboutSection() {
                 work happens when curious people work together.
               </p>
               <p>
-                My background in IT gave that{" "}
+                My background in CS gave that{" "}
                 <strong style={{ color: "var(--ink)", fontWeight: 700 }}>curiosity</strong> a direction,
                 turning unconventional ideas into data-driven solutions and
                 competition wins into proof that they actually work.
@@ -74,21 +74,25 @@ export default function AboutSection() {
             </div>
 
             {/* Contact Links */}
-            <div className="mt-10 space-y-3">
+            <div className="mt-10 space-y-3.5">
               {[
-                { icon: "✉", label: "triadim.works@gmail.com", href: "mailto:triadim.works@gmail.com" },
-                { icon: "⌘", label: "github.com/ahmdtrdi", href: "https://github.com/ahmdtrdi" },
-                { icon: "◆", label: "linkedin.com/in/triadim", href: "https://linkedin.com/in/triadim" },
+                { icon: "/email.png", label: "triadim.works@gmail.com", href: "mailto:triadim.works@gmail.com" },
+                { icon: "/github.png", label: "github.com/ahmdtrdi", href: "https://github.com/ahmdtrdi" },
+                { icon: "/linkedin-black.png", label: "linkedin.com/in/triadim", href: "https://linkedin.com/in/triadim" },
               ].map((link, i) => (
                 <a
                   key={i}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-sm transition-colors duration-300 hover:text-[var(--ink)] group"
+                  className="flex items-center gap-3.5 text-sm transition-colors duration-300 hover:text-[var(--ink)] group"
                   style={{ color: "var(--ink-light)", fontFamily: "var(--font-inter)" }}
                 >
-                  <span className="text-xs opacity-50 group-hover:opacity-100 transition-opacity">{link.icon}</span>
+                  <img
+                    src={link.icon}
+                    alt=""
+                    className="w-[18px] h-[18px] object-contain opacity-55 group-hover:opacity-100 transition-opacity duration-300"
+                  />
                   {link.label}
                 </a>
               ))}
@@ -97,91 +101,84 @@ export default function AboutSection() {
 
           {/* Right — Polaroid Cards */}
           <div
-            className="relative h-[400px] md:h-[500px] transition-all duration-1000 ease-out"
+            className="relative h-[480px] md:h-[550px] transition-all duration-1000 ease-out"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? "translateX(0)" : "translateX(40px)",
               transitionDelay: "0.3s",
             }}
           >
-            {/* Card 1 — GPA */}
+            {/* Card 1 — GPA (Top-Left of the cluster) */}
             <div
-              className="absolute top-0 right-[15%] md:right-[20%] w-[180px] md:w-[200px] bg-white p-3 shadow-lg transition-transform duration-500 hover:-translate-y-2"
+              className="absolute top-[2%] left-[8%] sm:left-[12%] md:left-[15%] w-[150px] sm:w-[165px] md:w-[185px] bg-white p-2.5 pb-4 md:p-3 md:pb-5 shadow-lg transition-transform duration-500 hover:-translate-y-3 z-10"
               style={{
-                transform: `rotate(-3deg)`,
+                transform: `rotate(-4deg)`,
                 borderRadius: 4,
-                boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
               }}
             >
+              {/* Sticky Tape centered at the top */}
               <div
-                className="w-full aspect-[4/3] rounded-sm mb-3 flex items-center justify-center"
-                style={{ background: "linear-gradient(135deg, var(--paper-warm), var(--lavender-light))" }}
-              >
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold" style={{ fontFamily: "var(--font-playfair)", color: "var(--ink)" }}>3.91</div>
-                  <div className="text-xs mt-1" style={{ color: "var(--ink-light)" }}>/4.00</div>
-                </div>
-              </div>
-              <p className="text-xs text-center" style={{ color: "var(--ink-light)", fontFamily: "var(--font-inter)" }}>
-                B.CS GPA <strong style={{ color: "var(--ink)" }}>3.91/4.00</strong>
+                className="absolute top-[-8px] left-[50%] -translate-x-[50%] w-[38px] h-[11px] rounded-sm z-30"
+                style={{ background: "var(--gold-light)", opacity: 0.8, transform: "rotate(-4deg)" }}
+              />
+              <img
+                src="/formal-transparan.png"
+                alt="B.CS GPA 3.92/4.00"
+                className="w-full aspect-square object-cover rounded-sm mb-2 bg-white"
+              />
+              <p className="text-[10px] md:text-xs text-center font-medium" style={{ color: "var(--ink-light)", fontFamily: "var(--font-inter)", letterSpacing: "-0.01em" }}>
+                B.CS GPA <strong style={{ color: "var(--ink)" }}>3.92/4.00</strong>
               </p>
             </div>
 
-            {/* Card 2 — Competition */}
+            {/* Card 2 — Competition (Middle-Right, overlaps margins slightly but does not cover text) */}
             <div
-              className="absolute top-[25%] right-0 w-[170px] md:w-[190px] bg-white p-3 shadow-lg transition-transform duration-500 hover:-translate-y-2"
+              className="absolute top-[28%] right-[1%] sm:right-[3%] md:right-[5%] w-[145px] sm:w-[160px] md:w-[180px] bg-white p-2.5 pb-4 md:p-3 md:pb-5 shadow-lg transition-transform duration-500 hover:-translate-y-3 z-20"
               style={{
-                transform: "rotate(5deg)",
+                transform: "rotate(6deg)",
                 borderRadius: 4,
-                boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+                boxShadow: "0 12px 35px rgba(0,0,0,0.07)",
               }}
             >
+              {/* Sticky Tape centered at the top */}
               <div
-                className="w-full aspect-[4/3] rounded-sm mb-3 flex items-center justify-center"
-                style={{ background: "linear-gradient(135deg, var(--gold-light), var(--peach-muted))" }}
-              >
-                <div className="text-center px-3">
-                  <div className="text-lg md:text-xl font-bold" style={{ fontFamily: "var(--font-playfair)", color: "var(--ink)" }}>🏆</div>
-                  <div className="text-xs mt-1 font-medium" style={{ color: "var(--ink)" }}>ITC National</div>
-                </div>
-              </div>
-              <p className="text-xs text-center" style={{ color: "var(--ink-light)", fontFamily: "var(--font-inter)" }}>
+                className="absolute top-[-8px] left-[50%] -translate-x-[50%] w-[36px] h-[11px] rounded-sm z-30"
+                style={{ background: "var(--lavender-light)", opacity: 0.8, transform: "rotate(6deg)" }}
+              />
+              <img
+                src="/itc.jpg"
+                alt="ITC National"
+                className="w-full aspect-square object-cover rounded-sm mb-2"
+              />
+              <p className="text-[10px] md:text-xs text-center font-medium" style={{ color: "var(--ink-light)", fontFamily: "var(--font-inter)", letterSpacing: "-0.01em" }}>
                 ITC National @ Tel-U
               </p>
             </div>
 
-            {/* Card 3 — Internship */}
+            {/* Card 3 — Internship (Bottom-Left, directly below Card 1 with zero overlap) */}
             <div
-              className="absolute bottom-[5%] left-[5%] md:left-[10%] w-[180px] md:w-[200px] bg-white p-3 shadow-lg transition-transform duration-500 hover:-translate-y-2"
+              className="absolute top-[55%] left-[8%] sm:left-[12%] md:left-[15%] w-[150px] sm:w-[165px] md:w-[185px] bg-white p-2.5 pb-4 md:p-3 md:pb-5 shadow-lg transition-transform duration-500 hover:-translate-y-3 z-10"
               style={{
-                transform: "rotate(-2deg)",
+                transform: "rotate(-3deg)",
                 borderRadius: 4,
-                boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
               }}
             >
+              {/* Sticky Tape centered at the top */}
               <div
-                className="w-full aspect-[4/3] rounded-sm mb-3 flex items-center justify-center"
-                style={{ background: "linear-gradient(135deg, var(--blue-light), var(--lavender-muted))" }}
-              >
-                <div className="text-center px-3">
-                  <div className="text-lg md:text-xl" style={{ fontFamily: "var(--font-playfair)", color: "var(--ink)" }}>🧠</div>
-                  <div className="text-xs mt-1 font-medium" style={{ color: "var(--ink)" }}>ML Intern</div>
-                </div>
-              </div>
-              <p className="text-xs text-center" style={{ color: "var(--ink-light)", fontFamily: "var(--font-inter)" }}>
+                className="absolute top-[-8px] left-[50%] -translate-x-[50%] w-[38px] h-[11px] rounded-sm z-30"
+                style={{ background: "var(--blue-light)", opacity: 0.8, transform: "rotate(-3deg)" }}
+              />
+              <img
+                src="/intern.jpg"
+                alt="ML Intern"
+                className="w-full aspect-square object-cover rounded-sm mb-2"
+              />
+              <p className="text-[10px] md:text-xs text-center font-medium" style={{ color: "var(--ink-light)", fontFamily: "var(--font-inter)", letterSpacing: "-0.01em" }}>
                 ML Intern @BSG
               </p>
             </div>
-
-            {/* Decorative tape marks */}
-            <div
-              className="absolute top-[-8px] right-[25%] md:right-[30%] w-[40px] h-[12px] rounded-sm"
-              style={{ background: "var(--gold-light)", opacity: 0.7, transform: "rotate(-8deg)" }}
-            />
-            <div
-              className="absolute top-[23%] right-[3%] w-[35px] h-[12px] rounded-sm"
-              style={{ background: "var(--lavender-light)", opacity: 0.7, transform: "rotate(12deg)" }}
-            />
           </div>
         </div>
       </div>
