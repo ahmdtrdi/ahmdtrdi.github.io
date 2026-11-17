@@ -108,17 +108,10 @@ export default function AboutSection() {
               }}
             >
               <p>
-                I&apos;m <strong style={{ color: "var(--ink)", fontWeight: 600 }}>Triadi</strong>,
-                the kind of person who watches a film and walks away with three new questions.
-                I am driven by curiosity and join competition hackathons to ship ideas that others might consider unconventional.
-                I genuinely believe that the best work happens when curious minds collaborate with resilience and diligence.
+                I&apos;m a fresh <strong style={{ color: "var(--ink)", fontWeight: 600 }}>Computer Science graduate</strong> with expertise in <strong style={{ color: "var(--ink)", fontWeight: 600 }}>data &amp; AI/ML</strong>. I&apos;ve honed skills of 1 year work experience from my internship &amp; hackathons in applied science to interpreting data, analyzing, and training including Database, AI/ML pipeline, Big Data Analysis, and Fine-tuning a model.
               </p>
               <p>
-                Computer Science and technology gave me the privilege to direct my curiosity — turning{" "}
-                <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
-                  unconventional concepts into data-driven solutions
-                </strong>
-                , and national competition victories into definitive proof that they actually work.
+                I don&apos;t need things to be easy, I need them to be worth it. When a problem pushes back, I get quieter, more focused, and more stubborn in the best way. I take feedback seriously, hold myself to a high standard, and care just as much about <strong style={{ color: "var(--ink)", fontWeight: 600 }}>how we work together</strong> as what we end up making. Curiosity gets me started, resilience gets me finished.
               </p>
             </div>
 
