@@ -93,9 +93,9 @@ export default function Footer() {
               className="text-sm leading-relaxed opacity-50"
               style={{ fontFamily: "var(--font-inter)" }}
             >
-              Charting curiosity into code.
+              Software Engineer · AI/ML Engineer · Quant · Web3
               <br />
-              One project at a time.
+              Turning curiosity into data-driven solutions.
             </p>
           </div>
 
@@ -108,14 +108,20 @@ export default function Footer() {
               Navigate
             </p>
             <div className="space-y-2">
-              {["About", "Research", "Internship", "Competition"].map((label) => (
+              {[
+                { label: "About", href: "#about" },
+                { label: "Internship", href: "#internship" },
+                { label: "Research Project", href: "#research" },
+                { label: "Competition", href: "#competition" },
+                { label: "Showcase & Gallery", href: "#gallery" },
+              ].map((link) => (
                 <a
-                  key={label}
-                  href={`#${label.toLowerCase()}`}
+                  key={link.label}
+                  href={link.href}
                   className="block text-sm opacity-60 hover:opacity-100 transition-opacity"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
-                  {label}
+                  {link.label}
                 </a>
               ))}
             </div>
@@ -165,7 +171,7 @@ export default function Footer() {
             className="text-xs opacity-30 italic"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
-            &ldquo;The best chart is the one you&apos;re still drawing.&rdquo;
+            &ldquo;Turning unconventional ideas into proof that works.&rdquo;
           </p>
         </div>
       </div>

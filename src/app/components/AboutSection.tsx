@@ -32,11 +32,55 @@ export default function AboutSection() {
       className="relative py-24 md:py-32 overflow-hidden"
       style={{ background: "transparent" }}
     >
-      {/* Decorative large bokeh bubbles behind cards (Canva style) */}
-      <div className="floating-dot" style={{ width: 32, height: 32, background: "var(--lavender)", opacity: 0.35, top: "25%", right: "22%", animationDelay: "0.5s" }} />
-      <div className="floating-dot" style={{ width: 24, height: 24, background: "var(--peach)", opacity: 0.3, top: "45%", right: "35%", animationDelay: "1.5s" }} />
-      <div className="floating-dot" style={{ width: 36, height: 36, background: "var(--blue-light)", opacity: 0.3, bottom: "20%", right: "12%", animationDelay: "2.0s" }} />
-      <div className="floating-dot" style={{ width: 20, height: 20, background: "var(--gold)", opacity: 0.25, top: "15%", right: "6%", animationDelay: "0.8s" }} />
+      {/* Decorative large bokeh bubbles behind cards */}
+      <div
+        className="floating-dot"
+        style={{
+          width: 32,
+          height: 32,
+          background: "var(--lavender)",
+          opacity: 0.35,
+          top: "25%",
+          right: "22%",
+          animationDelay: "0.5s",
+        }}
+      />
+      <div
+        className="floating-dot"
+        style={{
+          width: 24,
+          height: 24,
+          background: "var(--peach)",
+          opacity: 0.3,
+          top: "45%",
+          right: "35%",
+          animationDelay: "1.5s",
+        }}
+      />
+      <div
+        className="floating-dot"
+        style={{
+          width: 36,
+          height: 36,
+          background: "var(--blue-light)",
+          opacity: 0.3,
+          bottom: "20%",
+          right: "12%",
+          animationDelay: "2.0s",
+        }}
+      />
+      <div
+        className="floating-dot"
+        style={{
+          width: 20,
+          height: 20,
+          background: "var(--gold)",
+          opacity: 0.25,
+          top: "15%",
+          right: "6%",
+          animationDelay: "0.8s",
+        }}
+      />
 
       <div className="section-container relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
@@ -57,28 +101,45 @@ export default function AboutSection() {
 
             <div
               className="text-base md:text-lg leading-relaxed space-y-5"
-              style={{ color: "var(--ink-light)", fontFamily: "var(--font-inter)", textAlign: "justify" }}
+              style={{
+                color: "var(--ink-light)",
+                fontFamily: "var(--font-inter)",
+                textAlign: "justify",
+              }}
             >
               <p>
-                I&apos;m <strong style={{ color: "var(--ink)", fontWeight: 600 }}>Triadi</strong>, the kind of person who watches a film and
-                walks away with three new questions, joins a competition to test an
-                idea everyone else called odd, and genuinely believes that the best
-                work happens when curious people work together.
+                I&apos;m <strong style={{ color: "var(--ink)", fontWeight: 600 }}>Triadi</strong>,
+                the kind of person who watches a film and walks away with three new questions.
+                I am driven by curiosity and join competition hackathons to ship ideas that others might consider unconventional.
+                I genuinely believe that the best work happens when curious minds collaborate with resilience and diligence.
               </p>
               <p>
-                My background in CS gave that{" "}
-                <strong style={{ color: "var(--ink)", fontWeight: 700 }}>curiosity</strong> a direction,
-                turning unconventional ideas into data-driven solutions and
-                competition wins into proof that they actually work.
+                Computer Science and technology gave me the privilege to direct my curiosity — turning{" "}
+                <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
+                  unconventional concepts into data-driven solutions
+                </strong>
+                , and national competition victories into definitive proof that they actually work.
               </p>
             </div>
 
             {/* Contact Links */}
             <div className="mt-10 space-y-3.5">
               {[
-                { icon: "/email.png", label: "triadim.works@gmail.com", href: "mailto:triadim.works@gmail.com" },
-                { icon: "/github.png", label: "github.com/ahmdtrdi", href: "https://github.com/ahmdtrdi" },
-                { icon: "/linkedin-black.png", label: "linkedin.com/in/triadim", href: "https://linkedin.com/in/triadim" },
+                {
+                  icon: "/email.png",
+                  label: "triadim.works@gmail.com",
+                  href: "mailto:triadim.works@gmail.com",
+                },
+                {
+                  icon: "/github.png",
+                  label: "github.com/ahmdtrdi",
+                  href: "https://github.com/ahmdtrdi",
+                },
+                {
+                  icon: "/linkedin-black.png",
+                  label: "linkedin.com/in/triadim",
+                  href: "https://linkedin.com/in/triadim",
+                },
               ].map((link, i) => (
                 <a
                   key={i}
@@ -86,7 +147,10 @@ export default function AboutSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3.5 text-sm transition-colors duration-300 hover:text-[var(--ink)] group"
-                  style={{ color: "var(--ink-light)", fontFamily: "var(--font-inter)" }}
+                  style={{
+                    color: "var(--ink-light)",
+                    fontFamily: "var(--font-inter)",
+                  }}
                 >
                   <img
                     src={link.icon}
@@ -120,19 +184,30 @@ export default function AboutSection() {
               {/* Sticky Tape centered at the top */}
               <div
                 className="absolute top-[-8px] left-[50%] -translate-x-[50%] w-[38px] h-[11px] rounded-sm z-30"
-                style={{ background: "var(--gold-light)", opacity: 0.8, transform: "rotate(-4deg)" }}
+                style={{
+                  background: "var(--gold-light)",
+                  opacity: 0.8,
+                  transform: "rotate(-4deg)",
+                }}
               />
               <img
                 src="/formal-transparan.png"
-                alt="B.CS GPA 3.92/4.00"
+                alt="B.CS GPA 3.92/4.00 (Cumlaude)"
                 className="w-full aspect-square object-cover rounded-sm mb-2 bg-white"
               />
-              <p className="text-[10px] md:text-xs text-center font-medium" style={{ color: "var(--ink-light)", fontFamily: "var(--font-inter)", letterSpacing: "-0.01em" }}>
-                B.CS GPA <strong style={{ color: "var(--ink)" }}>3.92/4.00</strong>
+              <p
+                className="text-[10px] md:text-xs text-center font-medium"
+                style={{
+                  color: "var(--ink-light)",
+                  fontFamily: "var(--font-inter)",
+                  letterSpacing: "-0.01em",
+                }}
+              >
+                GPA <strong style={{ color: "var(--ink)" }}>3.92/4.00</strong> (Cumlaude)
               </p>
             </div>
 
-            {/* Card 2 — Competition (Middle-Right, overlaps margins slightly but does not cover text) */}
+            {/* Card 2 — Competition (Middle-Right) */}
             <div
               className="absolute top-[28%] right-[1%] sm:right-[3%] md:right-[5%] w-[145px] sm:w-[160px] md:w-[180px] bg-white p-2.5 pb-4 md:p-3 md:pb-5 shadow-lg transition-transform duration-500 hover:-translate-y-3 z-20"
               style={{
@@ -144,19 +219,30 @@ export default function AboutSection() {
               {/* Sticky Tape centered at the top */}
               <div
                 className="absolute top-[-8px] left-[50%] -translate-x-[50%] w-[36px] h-[11px] rounded-sm z-30"
-                style={{ background: "var(--lavender-light)", opacity: 0.8, transform: "rotate(6deg)" }}
+                style={{
+                  background: "var(--lavender-light)",
+                  opacity: 0.8,
+                  transform: "rotate(6deg)",
+                }}
               />
               <img
                 src="/itc.jpg"
-                alt="ITC National"
+                alt="ITC National @ Tel-u"
                 className="w-full aspect-square object-cover rounded-sm mb-2"
               />
-              <p className="text-[10px] md:text-xs text-center font-medium" style={{ color: "var(--ink-light)", fontFamily: "var(--font-inter)", letterSpacing: "-0.01em" }}>
-                ITC National @ Tel-U
+              <p
+                className="text-[10px] md:text-xs text-center font-medium"
+                style={{
+                  color: "var(--ink-light)",
+                  fontFamily: "var(--font-inter)",
+                  letterSpacing: "-0.01em",
+                }}
+              >
+                ITC National @ Tel-u
               </p>
             </div>
 
-            {/* Card 3 — Internship (Bottom-Left, directly below Card 1 with zero overlap) */}
+            {/* Card 3 — Internship (Bottom-Left) */}
             <div
               className="absolute top-[55%] left-[8%] sm:left-[12%] md:left-[15%] w-[150px] sm:w-[165px] md:w-[185px] bg-white p-2.5 pb-4 md:p-3 md:pb-5 shadow-lg transition-transform duration-500 hover:-translate-y-3 z-10"
               style={{
@@ -168,15 +254,26 @@ export default function AboutSection() {
               {/* Sticky Tape centered at the top */}
               <div
                 className="absolute top-[-8px] left-[50%] -translate-x-[50%] w-[38px] h-[11px] rounded-sm z-30"
-                style={{ background: "var(--blue-light)", opacity: 0.8, transform: "rotate(-3deg)" }}
+                style={{
+                  background: "var(--blue-light)",
+                  opacity: 0.8,
+                  transform: "rotate(-3deg)",
+                }}
               />
               <img
                 src="/intern.jpg"
-                alt="ML Intern"
+                alt="Intern @ BSG"
                 className="w-full aspect-square object-cover rounded-sm mb-2"
               />
-              <p className="text-[10px] md:text-xs text-center font-medium" style={{ color: "var(--ink-light)", fontFamily: "var(--font-inter)", letterSpacing: "-0.01em" }}>
-                ML Intern @BSG
+              <p
+                className="text-[10px] md:text-xs text-center font-medium"
+                style={{
+                  color: "var(--ink-light)",
+                  fontFamily: "var(--font-inter)",
+                  letterSpacing: "-0.01em",
+                }}
+              >
+                intern @BSG
               </p>
             </div>
           </div>
